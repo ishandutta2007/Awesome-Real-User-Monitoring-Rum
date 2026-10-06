@@ -64,7 +64,7 @@ The table below lists top commercial SaaS Real User Monitoring platforms, ordere
 
 ## 🔓 Open-Source GitHub Projects
 
-Open-source Real User Monitoring has expanded rapidly. Below is the complete collection of self-hosted RUM platforms, browser instrumentation libraries, APM tracing tools, and privacy-focused analytics repositories, **sorted by GitHub Stars_Count (descending)**.
+Open-source Real User Monitoring has expanded rapidly. Below is the complete collection of self-hosted RUM platforms, browser instrumentation libraries, APM tracing tools, and privacy-focused analytics repositories, **sorted by GitHub_Stars_Count (descending)**.
 
 ### 🏆 Top Open-Source Projects (Sorted by Stars)
 
