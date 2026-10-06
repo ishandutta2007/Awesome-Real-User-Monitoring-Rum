@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="cyan-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <linearGradient id="purple-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="emerald-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseWave {
+      0% { stroke-dashoffset: 1200; opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: 0.4; }
+    }
+    @keyframes floatCard1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes floatCard2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(8px); }
+    }
+    @keyframes beaconPulse {
+      0% { r: 4px; opacity: 1; }
+      100% { r: 16px; opacity: 0; }
+    }
+    @keyframes glowShift {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.5; }
+    }
+
+    .rum-wave {
+      stroke-dasharray: 1200;
+      animation: pulseWave 8s linear infinite;
+    }
+    .card-float-1 { animation: floatCard1 6s ease-in-out infinite; }
+    .card-float-2 { animation: floatCard2 7s ease-in-out infinite; }
+    .pulse-ring { animation: beaconPulse 2.5s ease-out infinite; }
+    .bg-glow { animation: glowShift 4s ease-in-out infinite; }
+  </style>
+
+  <!-- Layer 1: Background Base & Grid -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" rx="16" />
+  <rect width="1200" height="420" fill="url(#grid)" rx="16" />
+
+  <!-- Layer 2: Ambient Background Glow Orbs -->
+  <circle cx="150" cy="100" r="180" fill="#06b6d4" opacity="0.15" filter="url(#glow-cyan)" class="bg-glow" />
+  <circle cx="1050" cy="320" r="220" fill="#8b5cf6" opacity="0.15" filter="url(#glow-purple)" class="bg-glow" />
+
+  <!-- Layer 3: Dynamic Animated RUM Waveform Background -->
+  <g opacity="0.35">
+    <path d="M 0 320 Q 200 240, 400 300 T 800 260 T 1200 310 L 1200 420 L 0 420 Z" fill="#0284c7" opacity="0.08" />
+    <path d="M 0 320 Q 200 240, 400 300 T 800 260 T 1200 310" fill="none" stroke="url(#cyan-blue)" stroke-width="3" class="rum-wave" />
+    <path d="M 0 360 Q 250 290, 550 340 T 950 280 T 1200 340" fill="none" stroke="url(#purple-pink)" stroke-width="2.5" class="rum-wave" style="animation-duration: 11s;" />
+  </g>
+
+  <!-- Layer 4: Floating Telemetry Cards (Positioned safely on sides) -->
+  <!-- Top Left Pill: Core Web Vitals -->
+  <g class="card-float-1" transform="translate(60, 50)">
+    <rect width="170" height="38" rx="19" fill="#1e293b" fill-opacity="0.85" stroke="#334155" stroke-width="1.5" />
+    <circle cx="20" cy="19" r="6" fill="#10b981" />
+    <circle cx="20" cy="19" r="6" fill="#10b981" class="pulse-ring" />
+    <text x="36" y="24" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">LCP 1.2s • Good</text>
+  </g>
+
+  <!-- Top Right Pill: Session Replay -->
+  <g class="card-float-2" transform="translate(970, 55)">
+    <rect width="170" height="38" rx="19" fill="#1e293b" fill-opacity="0.85" stroke="#334155" stroke-width="1.5" />
+    <circle cx="20" cy="19" r="6" fill="#06b6d4" />
+    <text x="36" y="23" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Live Sessions: 99.8%</text>
+  </g>
+
+  <!-- Bottom Left Pill: INP Metric -->
+  <g class="card-float-2" transform="translate(70, 340)">
+    <rect width="150" height="36" rx="18" fill="#1e293b" fill-opacity="0.85" stroke="#334155" stroke-width="1.5" />
+    <text x="18" y="22" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">⚡ INP: 45ms</text>
+  </g>
+
+  <!-- Bottom Right Pill: Errors -->
+  <g class="card-float-1" transform="translate(980, 335)">
+    <rect width="160" height="36" rx="18" fill="#1e293b" fill-opacity="0.85" stroke="#334155" stroke-width="1.5" />
+    <text x="18" y="22" fill="#a78bfa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🛡️ Error Free: 99.9%</text>
+  </g>
+
+  <!-- Layer 5: FOREGROUND MAIN CONTENT (Guaranteed Foreground Legibility) -->
+  <g transform="translate(600, 210)" text-anchor="middle">
+    <!-- Semi-transparent dark backing card behind main header for 100% legibility -->
+    <rect x="-420" y="-100" width="840" height="190" rx="20" fill="#0f172a" fill-opacity="0.75" stroke="#1e293b" stroke-width="1.5" />
+
+    <!-- Main Badge -->
+    <g transform="translate(0, -68)">
+      <rect x="-110" y="-14" width="220" height="28" rx="14" fill="url(#cyan-blue)" opacity="0.2" />
+      <rect x="-110" y="-14" width="220" height="28" rx="14" fill="none" stroke="#38bdf8" stroke-width="1" />
+      <text x="0" y="4" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">FRONTEND OBSERVABILITY</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="-10" fill="url(#text-grad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="42" font-weight="800" letter-spacing="-0.5">
+      Awesome Real User Monitoring
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="32" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500">
+      Curated SaaS Platforms, Self-Hosted RUM Tools &amp; Open-Source Telemetry
+    </text>
+
+    <!-- Tags Row -->
+    <g transform="translate(0, 68)">
+      <text x="0" y="0" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">
+        ⚡ Core Web Vitals &nbsp;•&nbsp; 📹 Session Replay &nbsp;•&nbsp; 📊 Browser Telemetry &nbsp;•&nbsp; 🛡️ Privacy-First
+      </text>
+    </g>
+  </g>
+</svg>
