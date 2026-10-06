@@ -32,6 +32,7 @@ This repository tracks leading commercial enterprise platforms and high-performi
 - [🎯 Framework & Architecture Recommendations](#-framework--architecture-recommendations)
 - [🤝 How to Contribute](#-how-to-contribute)
 - [⚖️ Disclaimer & Privacy Compliance](#-disclaimer--privacy-compliance)
+- [💖 Support & Community](#-support--community)
 - [📈 Star History](#-star-history)
 
 ---
@@ -179,6 +180,23 @@ When designing a production Real User Monitoring architecture:
 - **Data Privacy & GDPR**: RUM platforms collect real user behavioral metrics, IP addresses, user agents, and performance timelines. Self-hosted deployments require proper data anonymization, IP masking, and explicit user consent mechanisms under GDPR, CCPA, and ePrivacy directives.
 - **Session Replay Masking**: Session recording tools capture sensitive input fields. Ensure input masking (`type="password"`, sensitive DOM selectors) is enforced before transmitting payload data.
 - **SEO & Core Web Vitals**: Google uses Core Web Vitals (LCP, INP, CLS) as official search ranking factors. Continuous monitoring via RUM helps prevent SEO regressions.
+
+---
+
+## 💖 Support & Community
+
+Thank you for exploring **Awesome Real User Monitoring (RUM)**! If this project has saved you time or helped you build better web observability, please consider supporting it:
+
+- ⭐ **Star this repository** to increase its visibility for developers worldwide.
+- 🍴 **Fork it** to contribute new RUM platforms and tools.
+- 📢 **Share it** with your frontend engineering, DevOps, and performance teams.
+- ☕ **Buy me a coffee**: Support ongoing open-source maintenance via the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007).
+
+<p align="center">
+  <a href="https://github.com/sponsors/ishandutta2007">
+    <img src="https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?style=for-the-badge&logo=github-sponsors" alt="Sponsor on GitHub"/>
+  </a>
+</p>
 
 ---
 
